@@ -1,0 +1,62 @@
+
+ROM used:   978/8192 (12%)
+            978/8192 (12%) including unused fragments
+
+            1.0 Average locations per line
+            4.3 Average locations per statement
+
+RAM used:   61/368 (17%) at main() level
+            70/368 (19%) worst case
+
+Stack used: 0 worst case (0 in main + 0 for interrupts)
+Stack size: 8
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  216   229 100  namos_v1_1.c
+   40     0   0  namos_v1_1.h
+  758     0   0  ..\..\..\..\Program Files (x86)\PICC\Devices\16F887.h
+----- -----
+ 1014   229 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     21   2    1             @delay_ms1
+0     26   3    1    59  1.6  read_adc_value
+0    110  11    2  1008  5.3  light_out_control
+0     12   1    0             @goto10571
+0     12   1    0             @goto10585
+0    110  11    2  1008  5.3  state_out_control
+0     12   1    0             @goto10604
+0     12   1    0             @goto10618
+ Inline         4   228  2.8  start_meas
+0     32   3    6             @WRITEBITA
+0    114  12    2   171  4.0  btn_events
+0     23   2    5             @READBITA
+0     75   8    3   349  6.1  alarm_dedect
+0     51   5    1   317  5.8  alarm_led_pulse
+0    364  37    1  5040  6.5  MAIN
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               8
+    Statements              229
+    Comments                131
+    Volume (V)              10755
+    Difficulty (D)          37.9
+    Effort to implement (E) 407191
+    Time to implement (T)   6 hours, 17 minutes
+    Est Delivered Bugs (B)  2
+    Cyclomatic Complexity   74
+    Maintainability (MI)    76
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-007FF   974  1070  
+00800-00FFF     0  2048  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+

@@ -1,0 +1,1265 @@
+CCS PCM C Compiler, Version 5.007, 61971               22-Sep-23 16:40
+
+               Filename:   C:\Users\KavurmaKimyon\Desktop\namos_v1.1\namos_v1_1.lst
+
+               ROM used:   978 words (12%)
+                           Largest free fragment is 2048
+               RAM used:   61 (17%) at main() level
+                           70 (19%) worst case
+               Stack used: 0 locations
+               Stack size: 8
+
+*
+0000:  MOVLW  02
+0001:  MOVWF  0A
+0002:  GOTO   266
+0003:  NOP
+.................... #include <namos_v1_1.h> 
+.................... #include <16F887.h> 
+.................... //////// Standard Header file for the PIC16F887 device //////////////// 
+.................... #device PIC16F887 
+0004:  MOVF   5D,W
+0005:  ANDLW  07
+0006:  MOVWF  77
+0007:  RRF    5D,W
+0008:  MOVWF  78
+0009:  RRF    78,F
+000A:  RRF    78,F
+000B:  MOVLW  1F
+000C:  ANDWF  78,F
+000D:  MOVF   78,W
+000E:  ADDWF  5F,W
+000F:  MOVWF  04
+0010:  BCF    03.7
+0011:  BTFSC  60.0
+0012:  BSF    03.7
+0013:  CLRF   78
+0014:  INCF   78,F
+0015:  INCF   77,F
+0016:  GOTO   018
+0017:  RLF    78,F
+0018:  DECFSZ 77,F
+0019:  GOTO   017
+001A:  MOVF   5E,F
+001B:  BTFSC  03.2
+001C:  GOTO   020
+001D:  MOVF   78,W
+001E:  IORWF  00,F
+001F:  GOTO   023
+0020:  COMF   78,F
+0021:  MOVF   78,W
+0022:  ANDWF  00,F
+0023:  RETURN
+*
+0039:  MOVF   5D,W
+003A:  ANDLW  07
+003B:  MOVWF  77
+003C:  RRF    5D,W
+003D:  MOVWF  78
+003E:  RRF    78,F
+003F:  RRF    78,F
+0040:  MOVLW  1F
+0041:  ANDWF  78,F
+0042:  MOVF   78,W
+0043:  ADDWF  5E,W
+0044:  MOVWF  04
+0045:  BCF    03.7
+0046:  BTFSC  5F.0
+0047:  BSF    03.7
+0048:  MOVF   00,W
+0049:  MOVWF  78
+004A:  INCF   77,F
+004B:  GOTO   04D
+004C:  RRF    78,F
+004D:  DECFSZ 77,F
+004E:  GOTO   04C
+004F:  RETURN
+*
+00D8:  BCF    0A.0
+00D9:  BCF    0A.1
+00DA:  BCF    0A.2
+00DB:  ADDWF  02,F
+00DC:  GOTO   072
+00DD:  GOTO   078
+00DE:  GOTO   07E
+00DF:  GOTO   084
+00E0:  GOTO   08A
+00E1:  GOTO   090
+00E2:  GOTO   096
+00E3:  GOTO   09C
+00E4:  BCF    0A.0
+00E5:  BCF    0A.1
+00E6:  BCF    0A.2
+00E7:  ADDWF  02,F
+00E8:  GOTO   0A8
+00E9:  GOTO   0AE
+00EA:  GOTO   0B4
+00EB:  GOTO   0BA
+00EC:  GOTO   0C0
+00ED:  GOTO   0C6
+00EE:  GOTO   0CC
+00EF:  GOTO   0D2
+*
+015E:  BSF    0A.0
+015F:  BCF    0A.1
+0160:  BCF    0A.2
+0161:  ADDWF  02,F
+0162:  GOTO   0F8
+0163:  GOTO   0FE
+0164:  GOTO   104
+0165:  GOTO   10A
+0166:  GOTO   110
+0167:  GOTO   116
+0168:  GOTO   11C
+0169:  GOTO   122
+016A:  BSF    0A.0
+016B:  BCF    0A.1
+016C:  BCF    0A.2
+016D:  ADDWF  02,F
+016E:  GOTO   12E
+016F:  GOTO   134
+0170:  GOTO   13A
+0171:  GOTO   140
+0172:  GOTO   146
+0173:  GOTO   14C
+0174:  GOTO   152
+0175:  GOTO   158
+....................  
+.................... #list 
+....................  
+.................... #device ADC=10 
+....................  
+.................... #FUSES NOWDT                    //No Watch Dog Timer 
+.................... #FUSES NOBROWNOUT               //No brownout reset 
+.................... #FUSES NOLVP                    //No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O 
+....................  
+.................... #use delay(internal=4000000) 
+*
+0024:  MOVLW  5D
+0025:  MOVWF  04
+0026:  BCF    03.7
+0027:  MOVF   00,W
+0028:  BTFSC  03.2
+0029:  GOTO   038
+002A:  MOVLW  01
+002B:  MOVWF  78
+002C:  CLRF   77
+002D:  DECFSZ 77,F
+002E:  GOTO   02D
+002F:  DECFSZ 78,F
+0030:  GOTO   02C
+0031:  MOVLW  4A
+0032:  MOVWF  77
+0033:  DECFSZ 77,F
+0034:  GOTO   033
+0035:  GOTO   036
+0036:  DECFSZ 00,F
+0037:  GOTO   02A
+0038:  RETURN
+....................  
+.................... #use FIXED_IO( C_outputs=PIN_C7,PIN_C6,PIN_C5,PIN_C4,PIN_C3,PIN_C2,PIN_C1,PIN_C0 ) 
+.................... #use FIXED_IO( D_outputs=PIN_D7,PIN_D6,PIN_D5,PIN_D4,PIN_D3,PIN_D2,PIN_D1,PIN_D0 ) 
+....................  
+.................... #define state1   PIN_D2 
+.................... #define state2   PIN_D1 
+.................... #define state3   PIN_D0 
+.................... #define state4   PIN_D7 
+.................... #define state5   PIN_D6 
+.................... #define state6   PIN_D5 
+.................... #define state7   PIN_D4 
+.................... #define state8   PIN_D3 
+....................  
+.................... #define out1   PIN_C4 
+.................... #define out2   PIN_C5 
+.................... #define out3   PIN_C6 
+.................... #define out4   PIN_C7 
+.................... #define out5   PIN_C0 
+.................... #define out6   PIN_C1 
+.................... #define out7   PIN_C2 
+.................... #define out8   PIN_C3 
+....................  
+.................... #define btn1   PIN_B7 
+.................... #define btn2   PIN_B6 
+.................... #define btn3   PIN_B5 
+.................... #define btn4   PIN_B4 
+.................... #define btn5   PIN_B3 
+.................... #define btn6   PIN_B2 
+.................... #define btn7   PIN_B1 
+.................... #define btn8   PIN_B0 
+....................  
+....................  
+....................  
+.................... int btn_push_ok_value=25; 
+.................... short channel_state[8]; 
+.................... short btn_lock[8]; 
+.................... int btn_push_counter[8]; 
+.................... int analog_in[8] = {7, 4, 5, 6, 0, 1, 2, 3}; 
+*
+0282:  MOVLW  07
+0283:  BCF    03.6
+0284:  MOVWF  2B
+0285:  MOVLW  04
+0286:  MOVWF  2C
+0287:  MOVLW  05
+0288:  MOVWF  2D
+0289:  MOVLW  06
+028A:  MOVWF  2E
+028B:  CLRF   2F
+028C:  MOVLW  01
+028D:  MOVWF  30
+028E:  MOVLW  02
+028F:  MOVWF  31
+0290:  MOVLW  03
+0291:  MOVWF  32
+.................... int16 channel_emty_value[8]; 
+.................... int16 channel_active_value[8]; 
+.................... short channel_alarm_bit[8]; 
+.................... int alarm_high_counter=0; 
+.................... int alarm_low_counter=0; 
+.................... short alarm_led_up=0; 
+....................  
+.................... ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+....................  
+.................... int16 read_adc_value(int channel) 
+.................... {    
+....................    set_adc_channel(channel); 
+*
+0050:  RLF    5F,W
+0051:  MOVWF  77
+0052:  RLF    77,F
+0053:  MOVLW  FC
+0054:  ANDWF  77,F
+0055:  MOVF   1F,W
+0056:  ANDLW  C3
+0057:  IORWF  77,W
+0058:  MOVWF  1F
+....................    delay_us(20); 
+0059:  MOVLW  06
+005A:  MOVWF  77
+005B:  DECFSZ 77,F
+005C:  GOTO   05B
+005D:  NOP
+....................    return read_adc();     
+005E:  BSF    1F.1
+005F:  BTFSC  1F.1
+0060:  GOTO   05F
+0061:  MOVF   1E,W
+0062:  MOVWF  7A
+0063:  BSF    03.5
+0064:  MOVF   1E,W
+0065:  MOVWF  78
+0066:  MOVF   7A,W
+0067:  MOVWF  79
+0068:  BCF    03.5
+0069:  RETURN
+.................... } 
+....................  
+.................... ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+....................  
+.................... void light_out_control(int channel, short state) 
+.................... { 
+....................    if(state == 1) 
+006A:  DECFSZ 5E,W
+006B:  GOTO   0A2
+....................       switch(channel)  
+006C:  MOVF   5D,W
+006D:  ADDLW  F8
+006E:  BTFSC  03.0
+006F:  GOTO   0A1
+0070:  ADDLW  08
+0071:  GOTO   0D8
+....................       { 
+....................          case 0: output_high(out1); break; 
+0072:  MOVLW  00
+0073:  BSF    03.5
+0074:  MOVWF  07
+0075:  BCF    03.5
+0076:  BSF    07.4
+0077:  GOTO   0A1
+....................          case 1: output_high(out2); break; 
+0078:  MOVLW  00
+0079:  BSF    03.5
+007A:  MOVWF  07
+007B:  BCF    03.5
+007C:  BSF    07.5
+007D:  GOTO   0A1
+....................          case 2: output_high(out3); break; 
+007E:  MOVLW  00
+007F:  BSF    03.5
+0080:  MOVWF  07
+0081:  BCF    03.5
+0082:  BSF    07.6
+0083:  GOTO   0A1
+....................          case 3: output_high(out4); break; 
+0084:  MOVLW  00
+0085:  BSF    03.5
+0086:  MOVWF  07
+0087:  BCF    03.5
+0088:  BSF    07.7
+0089:  GOTO   0A1
+....................          case 4: output_high(out5); break; 
+008A:  MOVLW  00
+008B:  BSF    03.5
+008C:  MOVWF  07
+008D:  BCF    03.5
+008E:  BSF    07.0
+008F:  GOTO   0A1
+....................          case 5: output_high(out6); break; 
+0090:  MOVLW  00
+0091:  BSF    03.5
+0092:  MOVWF  07
+0093:  BCF    03.5
+0094:  BSF    07.1
+0095:  GOTO   0A1
+....................          case 6: output_high(out7); break; 
+0096:  MOVLW  00
+0097:  BSF    03.5
+0098:  MOVWF  07
+0099:  BCF    03.5
+009A:  BSF    07.2
+009B:  GOTO   0A1
+....................          case 7: output_high(out8); break; 
+009C:  MOVLW  00
+009D:  BSF    03.5
+009E:  MOVWF  07
+009F:  BCF    03.5
+00A0:  BSF    07.3
+....................       } 
+00A1:  GOTO   0D7
+....................    else 
+....................       switch(channel)  
+00A2:  MOVF   5D,W
+00A3:  ADDLW  F8
+00A4:  BTFSC  03.0
+00A5:  GOTO   0D7
+00A6:  ADDLW  08
+00A7:  GOTO   0E4
+....................       { 
+....................          case 0: output_low(out1); break; 
+00A8:  MOVLW  00
+00A9:  BSF    03.5
+00AA:  MOVWF  07
+00AB:  BCF    03.5
+00AC:  BCF    07.4
+00AD:  GOTO   0D7
+....................          case 1: output_low(out2); break; 
+00AE:  MOVLW  00
+00AF:  BSF    03.5
+00B0:  MOVWF  07
+00B1:  BCF    03.5
+00B2:  BCF    07.5
+00B3:  GOTO   0D7
+....................          case 2: output_low(out3); break; 
+00B4:  MOVLW  00
+00B5:  BSF    03.5
+00B6:  MOVWF  07
+00B7:  BCF    03.5
+00B8:  BCF    07.6
+00B9:  GOTO   0D7
+....................          case 3: output_low(out4); break; 
+00BA:  MOVLW  00
+00BB:  BSF    03.5
+00BC:  MOVWF  07
+00BD:  BCF    03.5
+00BE:  BCF    07.7
+00BF:  GOTO   0D7
+....................          case 4: output_low(out5); break; 
+00C0:  MOVLW  00
+00C1:  BSF    03.5
+00C2:  MOVWF  07
+00C3:  BCF    03.5
+00C4:  BCF    07.0
+00C5:  GOTO   0D7
+....................          case 5: output_low(out6); break; 
+00C6:  MOVLW  00
+00C7:  BSF    03.5
+00C8:  MOVWF  07
+00C9:  BCF    03.5
+00CA:  BCF    07.1
+00CB:  GOTO   0D7
+....................          case 6: output_low(out7); break; 
+00CC:  MOVLW  00
+00CD:  BSF    03.5
+00CE:  MOVWF  07
+00CF:  BCF    03.5
+00D0:  BCF    07.2
+00D1:  GOTO   0D7
+....................          case 7: output_low(out8); break; 
+00D2:  MOVLW  00
+00D3:  BSF    03.5
+00D4:  MOVWF  07
+00D5:  BCF    03.5
+00D6:  BCF    07.3
+....................       } 
+00D7:  RETURN
+.................... } 
+....................  
+.................... ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+....................  
+.................... void state_out_control(int channel, short state) 
+.................... { 
+....................    if(state == 1) 
+*
+00F0:  DECFSZ 5D,W
+00F1:  GOTO   128
+....................       switch(channel)  
+00F2:  MOVF   5C,W
+00F3:  ADDLW  F8
+00F4:  BTFSC  03.0
+00F5:  GOTO   127
+00F6:  ADDLW  08
+00F7:  GOTO   15E
+....................       { 
+....................          case 0: output_high(state1); break; 
+00F8:  MOVLW  00
+00F9:  BSF    03.5
+00FA:  MOVWF  08
+00FB:  BCF    03.5
+00FC:  BSF    08.2
+00FD:  GOTO   127
+....................          case 1: output_high(state2); break; 
+00FE:  MOVLW  00
+00FF:  BSF    03.5
+0100:  MOVWF  08
+0101:  BCF    03.5
+0102:  BSF    08.1
+0103:  GOTO   127
+....................          case 2: output_high(state3); break; 
+0104:  MOVLW  00
+0105:  BSF    03.5
+0106:  MOVWF  08
+0107:  BCF    03.5
+0108:  BSF    08.0
+0109:  GOTO   127
+....................          case 3: output_high(state4); break; 
+010A:  MOVLW  00
+010B:  BSF    03.5
+010C:  MOVWF  08
+010D:  BCF    03.5
+010E:  BSF    08.7
+010F:  GOTO   127
+....................          case 4: output_high(state5); break; 
+0110:  MOVLW  00
+0111:  BSF    03.5
+0112:  MOVWF  08
+0113:  BCF    03.5
+0114:  BSF    08.6
+0115:  GOTO   127
+....................          case 5: output_high(state6); break; 
+0116:  MOVLW  00
+0117:  BSF    03.5
+0118:  MOVWF  08
+0119:  BCF    03.5
+011A:  BSF    08.5
+011B:  GOTO   127
+....................          case 6: output_high(state7); break; 
+011C:  MOVLW  00
+011D:  BSF    03.5
+011E:  MOVWF  08
+011F:  BCF    03.5
+0120:  BSF    08.4
+0121:  GOTO   127
+....................          case 7: output_high(state8); break; 
+0122:  MOVLW  00
+0123:  BSF    03.5
+0124:  MOVWF  08
+0125:  BCF    03.5
+0126:  BSF    08.3
+....................       } 
+0127:  GOTO   15D
+....................     else 
+....................       switch(channel)  
+0128:  MOVF   5C,W
+0129:  ADDLW  F8
+012A:  BTFSC  03.0
+012B:  GOTO   15D
+012C:  ADDLW  08
+012D:  GOTO   16A
+....................       { 
+....................          case 0: output_low(state1); break; 
+012E:  MOVLW  00
+012F:  BSF    03.5
+0130:  MOVWF  08
+0131:  BCF    03.5
+0132:  BCF    08.2
+0133:  GOTO   15D
+....................          case 1: output_low(state2); break; 
+0134:  MOVLW  00
+0135:  BSF    03.5
+0136:  MOVWF  08
+0137:  BCF    03.5
+0138:  BCF    08.1
+0139:  GOTO   15D
+....................          case 2: output_low(state3); break; 
+013A:  MOVLW  00
+013B:  BSF    03.5
+013C:  MOVWF  08
+013D:  BCF    03.5
+013E:  BCF    08.0
+013F:  GOTO   15D
+....................          case 3: output_low(state4); break; 
+0140:  MOVLW  00
+0141:  BSF    03.5
+0142:  MOVWF  08
+0143:  BCF    03.5
+0144:  BCF    08.7
+0145:  GOTO   15D
+....................          case 4: output_low(state5); break; 
+0146:  MOVLW  00
+0147:  BSF    03.5
+0148:  MOVWF  08
+0149:  BCF    03.5
+014A:  BCF    08.6
+014B:  GOTO   15D
+....................          case 5: output_low(state6); break; 
+014C:  MOVLW  00
+014D:  BSF    03.5
+014E:  MOVWF  08
+014F:  BCF    03.5
+0150:  BCF    08.5
+0151:  GOTO   15D
+....................          case 6: output_low(state7); break; 
+0152:  MOVLW  00
+0153:  BSF    03.5
+0154:  MOVWF  08
+0155:  BCF    03.5
+0156:  BCF    08.4
+0157:  GOTO   15D
+....................          case 7: output_low(state8); break; 
+0158:  MOVLW  00
+0159:  BSF    03.5
+015A:  MOVWF  08
+015B:  BCF    03.5
+015C:  BCF    08.3
+....................       } 
+015D:  RETURN
+....................  
+.................... } 
+....................  
+.................... ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+....................  
+.................... void start_meas(int channel) 
+.................... { 
+....................    channel_emty_value[channel] = read_adc_value(analog_in[channel]); 
+*
+0182:  BCF    03.0
+0183:  RLF    5B,W
+0184:  ADDLW  33
+0185:  MOVWF  78
+0186:  CLRF   7A
+0187:  BTFSC  03.0
+0188:  INCF   7A,F
+0189:  MOVF   78,W
+018A:  MOVWF  5C
+018B:  MOVF   7A,W
+018C:  MOVWF  5D
+018D:  MOVLW  2B
+018E:  ADDWF  5B,W
+018F:  MOVWF  04
+0190:  BCF    03.7
+0191:  MOVF   00,W
+0192:  MOVWF  5E
+0193:  MOVWF  5F
+0194:  CALL   050
+0195:  MOVF   5C,W
+0196:  MOVWF  04
+0197:  BCF    03.7
+0198:  BTFSC  5D.0
+0199:  BSF    03.7
+019A:  INCF   04,F
+019B:  MOVF   79,W
+019C:  MOVWF  00
+019D:  DECF   04,F
+019E:  MOVF   78,W
+019F:  MOVWF  00
+....................     
+....................    light_out_control(channel, 1); 
+01A0:  MOVF   5B,W
+01A1:  MOVWF  5D
+01A2:  MOVLW  01
+01A3:  MOVWF  5E
+01A4:  CALL   06A
+....................    state_out_control(channel, 1); 
+01A5:  MOVF   5B,W
+01A6:  MOVWF  5C
+01A7:  MOVLW  01
+01A8:  MOVWF  5D
+01A9:  CALL   0F0
+....................     
+....................    delay_ms(500); 
+01AA:  MOVLW  02
+01AB:  MOVWF  5C
+01AC:  MOVLW  FA
+01AD:  MOVWF  5D
+01AE:  CALL   024
+01AF:  DECFSZ 5C,F
+01B0:  GOTO   1AC
+....................     
+....................    channel_active_value[channel] = read_adc_value(analog_in[channel]); 
+01B1:  BCF    03.0
+01B2:  RLF    5B,W
+01B3:  ADDLW  43
+01B4:  MOVWF  78
+01B5:  CLRF   7A
+01B6:  BTFSC  03.0
+01B7:  INCF   7A,F
+01B8:  MOVF   78,W
+01B9:  MOVWF  5C
+01BA:  MOVF   7A,W
+01BB:  MOVWF  5D
+01BC:  MOVLW  2B
+01BD:  ADDWF  5B,W
+01BE:  MOVWF  04
+01BF:  BCF    03.7
+01C0:  MOVF   00,W
+01C1:  MOVWF  5E
+01C2:  MOVWF  5F
+01C3:  CALL   050
+01C4:  MOVF   5C,W
+01C5:  MOVWF  04
+01C6:  BCF    03.7
+01C7:  BTFSC  5D.0
+01C8:  BSF    03.7
+01C9:  INCF   04,F
+01CA:  MOVF   79,W
+01CB:  MOVWF  00
+01CC:  DECF   04,F
+01CD:  MOVF   78,W
+01CE:  MOVWF  00
+....................     
+....................    channel_state[channel] = 1;  
+01CF:  MOVF   5B,W
+01D0:  MOVWF  5D
+01D1:  MOVLW  01
+01D2:  MOVWF  5E
+01D3:  CLRF   60
+01D4:  MOVLW  21
+01D5:  MOVWF  5F
+01D6:  CALL   004
+.................... } 
+....................  
+.................... ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+....................  
+.................... void btn_events(int channel) 
+.................... { 
+....................    if(channel_state[channel] == 0)  
+*
+0176:  MOVF   5A,W
+0177:  MOVWF  5D
+0178:  CLRF   5F
+0179:  MOVLW  21
+017A:  MOVWF  5E
+017B:  CALL   039
+017C:  MOVF   78,W
+017D:  ANDLW  01
+017E:  BTFSS  03.2
+017F:  GOTO   1D8
+....................    {   
+....................       start_meas(channel);       
+0180:  MOVF   5A,W
+0181:  MOVWF  5B
+....................    } 
+*
+01D7:  GOTO   1E7
+....................    else 
+....................    {   
+....................       light_out_control(channel, 0); 
+01D8:  MOVF   5A,W
+01D9:  MOVWF  5D
+01DA:  CLRF   5E
+01DB:  CALL   06A
+....................       state_out_control(channel, 0); 
+01DC:  MOVF   5A,W
+01DD:  MOVWF  5C
+01DE:  CLRF   5D
+01DF:  CALL   0F0
+....................       channel_state[channel] = 0; 
+01E0:  MOVF   5A,W
+01E1:  MOVWF  5D
+01E2:  CLRF   5E
+01E3:  CLRF   60
+01E4:  MOVLW  21
+01E5:  MOVWF  5F
+01E6:  CALL   004
+....................    } 
+01E7:  RETURN
+.................... } 
+....................  
+.................... ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+....................  
+.................... void alarm_dedect() 
+01E8:  CLRF   5B
+01E9:  CLRF   5A
+.................... { 
+....................    int16 xx=0; 
+....................    for(int ch=0; ch<8; ch++) 
+01EA:  CLRF   5C
+01EB:  MOVF   5C,W
+01EC:  SUBLW  07
+01ED:  BTFSS  03.0
+01EE:  GOTO   230
+....................       if(channel_state[ch] == 1) 
+01EF:  MOVF   5C,W
+01F0:  MOVWF  5D
+01F1:  CLRF   5F
+01F2:  MOVLW  21
+01F3:  MOVWF  5E
+01F4:  CALL   039
+01F5:  MOVF   78,W
+01F6:  ANDLW  01
+01F7:  SUBLW  01
+01F8:  BTFSS  03.2
+01F9:  GOTO   22E
+....................       {         
+....................          xx = read_adc_value(analog_in[ch]); 
+01FA:  MOVLW  2B
+01FB:  ADDWF  5C,W
+01FC:  MOVWF  04
+01FD:  BCF    03.7
+01FE:  MOVF   00,W
+01FF:  MOVWF  5D
+0200:  MOVWF  5F
+0201:  CALL   050
+0202:  MOVF   79,W
+0203:  MOVWF  5B
+0204:  MOVF   78,W
+0205:  MOVWF  5A
+....................           
+....................          if(xx > 550 || xx < 497) 
+0206:  MOVF   5B,W
+0207:  SUBLW  01
+0208:  BTFSC  03.0
+0209:  GOTO   211
+020A:  XORLW  FF
+020B:  BTFSS  03.2
+020C:  GOTO   21B
+020D:  MOVF   5A,W
+020E:  SUBLW  26
+020F:  BTFSS  03.0
+0210:  GOTO   21B
+0211:  MOVF   5B,W
+0212:  SUBLW  01
+0213:  BTFSS  03.0
+0214:  GOTO   22E
+0215:  BTFSS  03.2
+0216:  GOTO   21B
+0217:  MOVF   5A,W
+0218:  SUBLW  F0
+0219:  BTFSS  03.0
+021A:  GOTO   22E
+....................          { 
+....................             light_out_control(ch, 0); 
+021B:  MOVF   5C,W
+021C:  MOVWF  5D
+021D:  CLRF   5E
+021E:  CALL   06A
+....................             channel_state[ch] = 0; 
+021F:  MOVF   5C,W
+0220:  MOVWF  5D
+0221:  CLRF   5E
+0222:  CLRF   60
+0223:  MOVLW  21
+0224:  MOVWF  5F
+0225:  CALL   004
+....................             channel_alarm_bit[ch] = 1; 
+0226:  MOVF   5C,W
+0227:  MOVWF  5D
+0228:  MOVLW  01
+0229:  MOVWF  5E
+022A:  CLRF   60
+022B:  MOVLW  53
+022C:  MOVWF  5F
+022D:  CALL   004
+....................          }       
+022E:  INCF   5C,F
+022F:  GOTO   1EB
+....................       } 
+0230:  BCF    0A.3
+0231:  BCF    0A.4
+0232:  GOTO   3A7 (RETURN)
+....................           
+.................... } 
+....................  
+.................... ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+....................  
+.................... void alarm_led_pulse() 
+.................... { 
+....................    if(alarm_led_up==1) for(int m=0; m<8; m++) if(channel_alarm_bit[m]==1) state_out_control(m, 1); 
+0233:  BTFSS  56.0
+0234:  GOTO   263
+0235:  CLRF   5A
+0236:  MOVF   5A,W
+0237:  SUBLW  07
+0238:  BTFSS  03.0
+0239:  GOTO   263
+023A:  MOVF   5A,W
+023B:  MOVWF  5D
+023C:  CLRF   5F
+023D:  MOVLW  53
+023E:  MOVWF  5E
+023F:  CALL   039
+0240:  MOVF   78,W
+0241:  ANDLW  01
+0242:  SUBLW  01
+0243:  BTFSS  03.2
+0244:  GOTO   24B
+0245:  MOVF   5A,W
+0246:  MOVWF  5C
+0247:  MOVLW  01
+0248:  MOVWF  5D
+0249:  CALL   0F0
+024A:  GOTO   261
+....................    else                for(int n=0; n<8; n++) if(channel_alarm_bit[n]==1) state_out_control(n, 0); 
+024B:  CLRF   5B
+024C:  MOVF   5B,W
+024D:  SUBLW  07
+024E:  BTFSS  03.0
+024F:  GOTO   261
+0250:  MOVF   5B,W
+0251:  MOVWF  5D
+0252:  CLRF   5F
+0253:  MOVLW  53
+0254:  MOVWF  5E
+0255:  CALL   039
+0256:  MOVF   78,W
+0257:  ANDLW  01
+0258:  SUBLW  01
+0259:  BTFSS  03.2
+025A:  GOTO   25F
+025B:  MOVF   5B,W
+025C:  MOVWF  5C
+025D:  CLRF   5D
+025E:  CALL   0F0
+025F:  INCF   5B,F
+0260:  GOTO   24C
+0261:  INCF   5A,F
+0262:  GOTO   236
+0263:  BCF    0A.3
+0264:  BCF    0A.4
+0265:  GOTO   3BA (RETURN)
+.................... } 
+....................  
+.................... void main() 
+0266:  MOVLW  61
+0267:  BSF    03.5
+0268:  MOVWF  0F
+0269:  MOVF   0F,W
+026A:  MOVLW  19
+026B:  BCF    03.5
+026C:  MOVWF  20
+026D:  CLRF   54
+026E:  CLRF   55
+026F:  BCF    56.0
+0270:  BSF    03.5
+0271:  BSF    03.6
+0272:  MOVF   09,W
+0273:  ANDLW  C0
+0274:  MOVWF  09
+0275:  BCF    03.6
+0276:  BCF    1F.4
+0277:  BCF    1F.5
+0278:  MOVLW  00
+0279:  BSF    03.6
+027A:  MOVWF  08
+027B:  BCF    03.5
+027C:  CLRF   07
+027D:  CLRF   08
+027E:  CLRF   09
+027F:  BCF    03.7
+0280:  MOVLW  1F
+0281:  ANDWF  03,F
+.................... {   
+....................    
+....................   // float okunan; 
+....................    setup_adc_ports(sAN0|sAN1|sAN2|sAN3|sAN4|sAN5|sAN6); 
+*
+0292:  BSF    03.5
+0293:  BSF    03.6
+0294:  MOVF   09,W
+0295:  ANDLW  C0
+0296:  MOVWF  09
+0297:  BCF    03.6
+0298:  BCF    1F.4
+0299:  BCF    1F.5
+029A:  MOVLW  7F
+029B:  BSF    03.6
+029C:  MOVWF  08
+....................    setup_adc(ADC_CLOCK_INTERNAL); 
+029D:  BCF    03.5
+029E:  BCF    03.6
+029F:  BSF    1F.6
+02A0:  BSF    1F.7
+02A1:  BSF    03.5
+02A2:  BSF    1F.7
+02A3:  BCF    03.5
+02A4:  BSF    1F.0
+....................     
+....................    set_tris_b(0xff); 
+02A5:  MOVLW  FF
+02A6:  BSF    03.5
+02A7:  MOVWF  06
+....................    set_tris_c(0x00); 
+02A8:  MOVLW  00
+02A9:  MOVWF  07
+....................    set_tris_d(0x00); 
+02AA:  MOVWF  08
+....................    set_tris_e(0x00); 
+02AB:  BCF    09.0
+02AC:  BCF    09.1
+02AD:  BCF    09.2
+02AE:  BCF    09.3
+....................     
+....................    output_low(state1); 
+02AF:  MOVWF  08
+02B0:  BCF    03.5
+02B1:  BCF    08.2
+....................    output_low(state2); 
+02B2:  BSF    03.5
+02B3:  MOVWF  08
+02B4:  BCF    03.5
+02B5:  BCF    08.1
+....................    output_low(state3); 
+02B6:  BSF    03.5
+02B7:  MOVWF  08
+02B8:  BCF    03.5
+02B9:  BCF    08.0
+....................    output_low(state4); 
+02BA:  BSF    03.5
+02BB:  MOVWF  08
+02BC:  BCF    03.5
+02BD:  BCF    08.7
+....................    output_low(state5); 
+02BE:  BSF    03.5
+02BF:  MOVWF  08
+02C0:  BCF    03.5
+02C1:  BCF    08.6
+....................    output_low(state6); 
+02C2:  BSF    03.5
+02C3:  MOVWF  08
+02C4:  BCF    03.5
+02C5:  BCF    08.5
+....................    output_low(state7); 
+02C6:  BSF    03.5
+02C7:  MOVWF  08
+02C8:  BCF    03.5
+02C9:  BCF    08.4
+....................    output_low(state8); 
+02CA:  BSF    03.5
+02CB:  MOVWF  08
+02CC:  BCF    03.5
+02CD:  BCF    08.3
+....................     
+....................    output_low(out1); 
+02CE:  BSF    03.5
+02CF:  MOVWF  07
+02D0:  BCF    03.5
+02D1:  BCF    07.4
+....................    output_low(out2); 
+02D2:  BSF    03.5
+02D3:  MOVWF  07
+02D4:  BCF    03.5
+02D5:  BCF    07.5
+....................    output_low(out3); 
+02D6:  BSF    03.5
+02D7:  MOVWF  07
+02D8:  BCF    03.5
+02D9:  BCF    07.6
+....................    output_low(out4); 
+02DA:  BSF    03.5
+02DB:  MOVWF  07
+02DC:  BCF    03.5
+02DD:  BCF    07.7
+....................    output_low(out5); 
+02DE:  BSF    03.5
+02DF:  MOVWF  07
+02E0:  BCF    03.5
+02E1:  BCF    07.0
+....................    output_low(out6); 
+02E2:  BSF    03.5
+02E3:  MOVWF  07
+02E4:  BCF    03.5
+02E5:  BCF    07.1
+....................    output_low(out7); 
+02E6:  BSF    03.5
+02E7:  MOVWF  07
+02E8:  BCF    03.5
+02E9:  BCF    07.2
+....................    output_low(out8); 
+02EA:  BSF    03.5
+02EB:  MOVWF  07
+02EC:  BCF    03.5
+02ED:  BCF    07.3
+....................     
+....................    output_low(PIN_E2); 
+02EE:  BSF    03.5
+02EF:  BCF    09.2
+02F0:  BCF    03.5
+02F1:  BCF    09.2
+....................     
+....................    for(int a=0; a<8; a++) channel_alarm_bit[a]=0; 
+02F2:  CLRF   57
+02F3:  MOVF   57,W
+02F4:  SUBLW  07
+02F5:  BTFSS  03.0
+02F6:  GOTO   300
+02F7:  MOVF   57,W
+02F8:  MOVWF  5D
+02F9:  CLRF   5E
+02FA:  CLRF   60
+02FB:  MOVLW  53
+02FC:  MOVWF  5F
+02FD:  CALL   004
+02FE:  INCF   57,F
+02FF:  GOTO   2F3
+....................     
+....................    delay_ms(1000); 
+0300:  MOVLW  04
+0301:  MOVWF  5A
+0302:  MOVLW  FA
+0303:  MOVWF  5D
+0304:  CALL   024
+0305:  DECFSZ 5A,F
+0306:  GOTO   302
+....................  
+....................    while(TRUE) 
+....................    { /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
+....................       if(input(btn1)) {if(btn_lock[0] == 0) btn_push_counter[0]++;} else btn_lock[0] = 0;  
+0307:  BSF    03.5
+0308:  BSF    06.7
+0309:  BCF    03.5
+030A:  BTFSS  06.7
+030B:  GOTO   30F
+030C:  BTFSS  22.0
+030D:  INCF   23,F
+030E:  GOTO   310
+030F:  BCF    22.0
+....................       if(input(btn2)) {if(btn_lock[1] == 0) btn_push_counter[1]++;} else btn_lock[1] = 0; 
+0310:  BSF    03.5
+0311:  BSF    06.6
+0312:  BCF    03.5
+0313:  BTFSS  06.6
+0314:  GOTO   318
+0315:  BTFSS  22.1
+0316:  INCF   24,F
+0317:  GOTO   319
+0318:  BCF    22.1
+....................       if(input(btn3)) {if(btn_lock[2] == 0) btn_push_counter[2]++;} else btn_lock[2] = 0; 
+0319:  BSF    03.5
+031A:  BSF    06.5
+031B:  BCF    03.5
+031C:  BTFSS  06.5
+031D:  GOTO   321
+031E:  BTFSS  22.2
+031F:  INCF   25,F
+0320:  GOTO   322
+0321:  BCF    22.2
+....................       if(input(btn4)) {if(btn_lock[3] == 0) btn_push_counter[3]++;} else btn_lock[3] = 0; 
+0322:  BSF    03.5
+0323:  BSF    06.4
+0324:  BCF    03.5
+0325:  BTFSS  06.4
+0326:  GOTO   32A
+0327:  BTFSS  22.3
+0328:  INCF   26,F
+0329:  GOTO   32B
+032A:  BCF    22.3
+....................       if(input(btn5)) {if(btn_lock[4] == 0) btn_push_counter[4]++;} else btn_lock[4] = 0; 
+032B:  BSF    03.5
+032C:  BSF    06.3
+032D:  BCF    03.5
+032E:  BTFSS  06.3
+032F:  GOTO   333
+0330:  BTFSS  22.4
+0331:  INCF   27,F
+0332:  GOTO   334
+0333:  BCF    22.4
+....................       if(input(btn6)) {if(btn_lock[5] == 0) btn_push_counter[5]++;} else btn_lock[5] = 0; 
+0334:  BSF    03.5
+0335:  BSF    06.2
+0336:  BCF    03.5
+0337:  BTFSS  06.2
+0338:  GOTO   33C
+0339:  BTFSS  22.5
+033A:  INCF   28,F
+033B:  GOTO   33D
+033C:  BCF    22.5
+....................       if(input(btn7)) {if(btn_lock[6] == 0) btn_push_counter[6]++;} else btn_lock[6] = 0; 
+033D:  BSF    03.5
+033E:  BSF    06.1
+033F:  BCF    03.5
+0340:  BTFSS  06.1
+0341:  GOTO   345
+0342:  BTFSS  22.6
+0343:  INCF   29,F
+0344:  GOTO   346
+0345:  BCF    22.6
+....................       if(input(btn8)) {if(btn_lock[7] == 0) btn_push_counter[7]++;} else btn_lock[7] = 0; 
+0346:  BSF    03.5
+0347:  BSF    06.0
+0348:  BCF    03.5
+0349:  BTFSS  06.0
+034A:  GOTO   34E
+034B:  BTFSS  22.7
+034C:  INCF   2A,F
+034D:  GOTO   34F
+034E:  BCF    22.7
+....................     
+....................       if(btn_push_counter[0] == btn_push_ok_value) {btn_lock[0] = 1; btn_push_counter[0] = 0; for(int c=0; c<8; c++) channel_alarm_bit[c]=0; output_low(PIN_E2);} 
+034F:  MOVF   20,W
+0350:  SUBWF  23,W
+0351:  BTFSS  03.2
+0352:  GOTO   367
+0353:  BSF    22.0
+0354:  CLRF   23
+0355:  CLRF   58
+0356:  MOVF   58,W
+0357:  SUBLW  07
+0358:  BTFSS  03.0
+0359:  GOTO   363
+035A:  MOVF   58,W
+035B:  MOVWF  5D
+035C:  CLRF   5E
+035D:  CLRF   60
+035E:  MOVLW  53
+035F:  MOVWF  5F
+0360:  CALL   004
+0361:  INCF   58,F
+0362:  GOTO   356
+0363:  BSF    03.5
+0364:  BCF    09.2
+0365:  BCF    03.5
+0366:  BCF    09.2
+....................       if(btn_push_counter[1] == btn_push_ok_value) {btn_lock[1] = 1; btn_push_counter[1] = 0; btn_events(1);} 
+0367:  MOVF   20,W
+0368:  SUBWF  24,W
+0369:  BTFSS  03.2
+036A:  GOTO   370
+036B:  BSF    22.1
+036C:  CLRF   24
+036D:  MOVLW  01
+036E:  MOVWF  5A
+036F:  CALL   176
+....................       if(btn_push_counter[2] == btn_push_ok_value) {btn_lock[2] = 1; btn_push_counter[2] = 0; btn_events(2);} 
+0370:  MOVF   20,W
+0371:  SUBWF  25,W
+0372:  BTFSS  03.2
+0373:  GOTO   379
+0374:  BSF    22.2
+0375:  CLRF   25
+0376:  MOVLW  02
+0377:  MOVWF  5A
+0378:  CALL   176
+....................       if(btn_push_counter[3] == btn_push_ok_value) {btn_lock[3] = 1; btn_push_counter[3] = 0; btn_events(3);} 
+0379:  MOVF   20,W
+037A:  SUBWF  26,W
+037B:  BTFSS  03.2
+037C:  GOTO   382
+037D:  BSF    22.3
+037E:  CLRF   26
+037F:  MOVLW  03
+0380:  MOVWF  5A
+0381:  CALL   176
+....................       if(btn_push_counter[4] == btn_push_ok_value) {btn_lock[4] = 1; btn_push_counter[4] = 0; btn_events(4);} 
+0382:  MOVF   20,W
+0383:  SUBWF  27,W
+0384:  BTFSS  03.2
+0385:  GOTO   38B
+0386:  BSF    22.4
+0387:  CLRF   27
+0388:  MOVLW  04
+0389:  MOVWF  5A
+038A:  CALL   176
+....................       if(btn_push_counter[5] == btn_push_ok_value) {btn_lock[5] = 1; btn_push_counter[5] = 0; btn_events(5);} 
+038B:  MOVF   20,W
+038C:  SUBWF  28,W
+038D:  BTFSS  03.2
+038E:  GOTO   394
+038F:  BSF    22.5
+0390:  CLRF   28
+0391:  MOVLW  05
+0392:  MOVWF  5A
+0393:  CALL   176
+....................       if(btn_push_counter[6] == btn_push_ok_value) {btn_lock[6] = 1; btn_push_counter[6] = 0; btn_events(6);} 
+0394:  MOVF   20,W
+0395:  SUBWF  29,W
+0396:  BTFSS  03.2
+0397:  GOTO   39D
+0398:  BSF    22.6
+0399:  CLRF   29
+039A:  MOVLW  06
+039B:  MOVWF  5A
+039C:  CALL   176
+....................       if(btn_push_counter[7] == btn_push_ok_value) {btn_lock[7] = 1; btn_push_counter[7] = 0; btn_events(7);} 
+039D:  MOVF   20,W
+039E:  SUBWF  2A,W
+039F:  BTFSS  03.2
+03A0:  GOTO   3A6
+03A1:  BSF    22.7
+03A2:  CLRF   2A
+03A3:  MOVLW  07
+03A4:  MOVWF  5A
+03A5:  CALL   176
+....................        
+....................       alarm_dedect(); 
+03A6:  GOTO   1E8
+....................        
+....................       delay_ms(1); 
+03A7:  MOVLW  01
+03A8:  MOVWF  5D
+03A9:  CALL   024
+....................        
+....................       if(alarm_led_up == 0) { alarm_low_counter++; alarm_high_counter=0;} 
+03AA:  BTFSC  56.0
+03AB:  GOTO   3AF
+03AC:  INCF   55,F
+03AD:  CLRF   54
+03AE:  GOTO   3B1
+....................       else                  { alarm_low_counter=0; alarm_high_counter++;} 
+03AF:  CLRF   55
+03B0:  INCF   54,F
+....................        
+....................       if(alarm_low_counter  == 2000) alarm_led_up = 1; 
+03B1:  MOVF   55,W
+03B2:  SUBLW  D0
+03B3:  BTFSC  03.2
+03B4:  BSF    56.0
+....................       if(alarm_high_counter == 2000) alarm_led_up = 0; 
+03B5:  MOVF   54,W
+03B6:  SUBLW  D0
+03B7:  BTFSC  03.2
+03B8:  BCF    56.0
+....................        
+....................       alarm_led_pulse(); 
+03B9:  GOTO   233
+....................        
+....................       for(int b=0; b<8; b++) if(channel_alarm_bit[b] == 1) output_high(PIN_E2); 
+03BA:  CLRF   59
+03BB:  MOVF   59,W
+03BC:  SUBLW  07
+03BD:  BTFSS  03.0
+03BE:  GOTO   3D0
+03BF:  MOVF   59,W
+03C0:  MOVWF  5D
+03C1:  CLRF   5F
+03C2:  MOVLW  53
+03C3:  MOVWF  5E
+03C4:  CALL   039
+03C5:  MOVF   78,W
+03C6:  ANDLW  01
+03C7:  SUBLW  01
+03C8:  BTFSS  03.2
+03C9:  GOTO   3CE
+03CA:  BSF    03.5
+03CB:  BCF    09.2
+03CC:  BCF    03.5
+03CD:  BSF    09.2
+03CE:  INCF   59,F
+03CF:  GOTO   3BB
+03D0:  GOTO   307
+....................    } ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+.................... } 
+03D1:  SLEEP
+
+Configuration Fuses:
+   Word  1: 2CE4   INTRC_IO NOWDT PUT MCLR NOPROTECT NOCPD NOBROWNOUT IESO FCMEN NOLVP NODEBUG
+   Word  2: 3FFF   BORV40 NOWRT

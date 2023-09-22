@@ -1,0 +1,23 @@
+[PROJECT]
+Target=namos_v1_1.hex
+Processor_Text=PIC16F887
+CCSVerions=5.007
+Compiler=PCM
+CCSVersion=5.007
+[Target Data]
+FileList=namos_v1_1.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\;C:\Users\KavurmaKimyon\Desktop\namos_v1.1\
+[C:\Users\KavurmaKimyon\Desktop\namos_v1.1\namos_v1_1]
+Type=4
+[mru-list]
+1=namos_v1_1.c
+[Opened Files]
+1=namos_v1_1.c
+2=namos_v1_1.h
+3=
+[namos_v1_1.c]
+Type=4
+[Units]
+Count=1
+1=namos_v1_1 (main)

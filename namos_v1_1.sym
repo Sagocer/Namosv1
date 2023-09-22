@@ -1,0 +1,107 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PROGRAM_MEMORY8.P2
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2
+01B     CCP_2_LOW
+01C     CCP_2_HIGH
+020     btn_push_ok_value
+021     channel_state
+022     btn_lock
+023-02A btn_push_counter
+02B-032 analog_in
+033-042 channel_emty_value
+043-052 channel_active_value
+053     channel_alarm_bit
+054     alarm_high_counter
+055     alarm_low_counter
+056.0   alarm_led_up
+057     MAIN.a
+058     MAIN.c
+059     MAIN.b
+05A     btn_events.channel
+05A-05B alarm_dedect.xx
+05A     alarm_led_pulse.m
+05A     MAIN.@SCRATCH1
+05B     alarm_led_pulse.n
+05B     start_meas.channel
+05B     btn_events.@SCRATCH1
+05C     state_out_control.channel
+05C     alarm_dedect.ch
+05C     start_meas.@SCRATCH1
+05C     alarm_led_pulse.@SCRATCH1
+05D     @READBITA.P1
+05D     state_out_control.state
+05D     @delay_ms1.P1
+05D     light_out_control.channel
+05D     @WRITEBITA.P1
+05D     start_meas.@SCRATCH2
+05D     alarm_dedect.@SCRATCH1
+05E-05F @READBITA.P1
+05E     light_out_control.state
+05E     @WRITEBITA.P1
+05E     start_meas.@SCRATCH3
+05F     read_adc_value.channel
+05F-060 @WRITEBITA.P1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+107.6   C1OUT
+108.6   C2OUT
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+000004  @WRITEBITA
+000024  @delay_ms1
+000039  @READBITA
+000050  read_adc_value
+00006A  light_out_control
+0000D8  @goto10571
+0000E4  @goto10585
+0000F0  state_out_control
+00015E  @goto10604
+00016A  @goto10618
+000176  btn_events
+000182  start_meas
+0001E8  alarm_dedect
+000233  alarm_led_pulse
+000266  @cinit1
+000266  MAIN
+00027F  @cinit2
+
+Project Directory:
+    C:\Users\KavurmaKimyon\Desktop\namos_v1.1\
+
+Project Files:
+    namos_v1_1.c                                            [22-Sep-23 16:40  CRC=8FF1EC44]
+    namos_v1_1.h                                            [22-Sep-23 16:40  CRC=5C46590E]
+    ..\..\..\..\Program Files (x86)\PICC\Devices\16F887.h   [21-Jun-13 16:04  CRC=9FD133B5]
+
+Source signature=2BDAACBC
+
+Units:
+    namos_v1_1 (main)
+
+Compiler Settings:
+    Processor:      PIC16F887
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   namos_v1_1.xsym
+    Errors:      namos_v1_1.err
+    Ext Symbols: namos_v1_1.esym
+    INHX8:       namos_v1_1.hex
+    Symbols:     namos_v1_1.sym
+    List:        namos_v1_1.lst
+    Debug/COFF:  namos_v1_1.cof
+    Project:     namos_v1_1.ccspjt
+    Call Tree:   namos_v1_1.tre
+    Statistics:  namos_v1_1.STA
